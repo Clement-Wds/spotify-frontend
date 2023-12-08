@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+
+  &__navigation,
+  &__user {
+    display: flex;
+
+    .header__button {
+      margin-right: 10px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  // &__content {
+  //   // Ajoutez ici les styles pour le contenu de votre en-tête
+  // }
+}
