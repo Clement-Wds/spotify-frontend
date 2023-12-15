@@ -1,0 +1,60 @@
+// SongBar.module.scss
+.songBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+
+  &:hover {
+    background-color: #4c426e;
+  }
+}
+
+.activeSong {
+  background-color: #4c426e;
+}
+
+.songIndex {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  margin-right: 1rem;
+}
+
+.songInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.songImage {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+
+.songDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.songName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.songAlbum {
+  font-size: 1rem;
+  color: #b3b3b3;
+  margin-top: 0.25rem;
+}

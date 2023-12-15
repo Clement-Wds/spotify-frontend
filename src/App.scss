@@ -1,0 +1,120 @@
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, #000000, #121286);
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.h-\[calc\(100vh-72px\)\] {
+  height: calc(100vh - 72px);
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.xl\:flex-row {
+  flex-direction: row;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.pb-40 {
+  padding-bottom: 10rem;
+}
+
+.xl\:sticky {
+  position: sticky;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.h-fit {
+  height: fit-content;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.animate-slideup {
+  animation: slideup 1s;
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), #2a2a80);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(40px);
+}
+
+.rounded-t-3xl {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

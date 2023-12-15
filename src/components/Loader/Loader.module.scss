@@ -1,0 +1,38 @@
+// Loader.module.scss
+.smallLoader,
+.fullLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.smallLoader {
+  width: 3rem;
+}
+
+.fullLoader {
+  width: 100%;
+}
+
+.smallImage,
+.fullImage {
+  object-fit: contain;
+}
+
+.smallImage {
+  width: 5rem;
+  height: 5rem;
+}
+
+.fullImage {
+  width: 8rem;
+  height: 8rem;
+}
+
+.loaderTitle {
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  margin-top: 0.5rem;
+}

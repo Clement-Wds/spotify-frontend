@@ -1,0 +1,12 @@
+.player {
+  /* Ajoutez ici les styles que vous souhaitez pour le lecteur audio */
+  width: 100%;
+  height: auto;
+  background-color: #282828;
+  color: #b3b3b3;
+
+  &:hover,
+  &:focus {
+    background-color: #1db954;
+  }
+}
