@@ -1,0 +1,68 @@
+// DetailsHeader.module.scss
+.detailsHeader {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gradient {
+  width: 100%;
+  height: 7rem;
+  background: linear-gradient(to top, transparent, black);
+}
+
+.artistInfo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+}
+
+.artistImage {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid;
+  box-shadow: 0 0 10px black;
+}
+
+.artistDetails {
+  margin-left: 1rem;
+}
+
+.artistName {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.artistSubtitle {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.artistGenre {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.artistBirth {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.artistOrigin {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.bottomSpace {
+  width: 100%;
+  height: 11rem;
+}

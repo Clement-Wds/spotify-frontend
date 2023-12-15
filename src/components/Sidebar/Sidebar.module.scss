@@ -1,0 +1,71 @@
+// Sidebar.module.scss
+.sidebarDesktop {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  padding: 1rem 0.5rem;
+  background-color: #191624;
+}
+
+.logo {
+  width: 100%;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.navLinks {
+  margin-top: 2.5rem;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #b3b3b3;
+
+  &:hover {
+    color: #1db954;
+  }
+}
+
+.navLinkIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.mobileMenuButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 0.75rem;
+}
+
+.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.sidebarMobile {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 66.67%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.1), #483d8b);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  padding: 1.5rem;
+  transition: left 0.3s ease;
+}
+
+.sidebarMobileOpen {
+  left: 0;
+}
+
+.sidebarMobileClose {
+  left: -100%;
+}

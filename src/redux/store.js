@@ -1,10 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit';
+
 import playerReducer from './features/playerSlice';
-import apiReducer from './features/apiSlice';
+import {spotifyApi} from './services/spotifyApi';
 
 export const store = configureStore({
   reducer: {
     player: playerReducer,
-    api: apiReducer,
+    [spotifyApi.reducerPath]: spotifyApi.reducer,
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(spotifyApi.middleware),
 });
