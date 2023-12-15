@@ -1,0 +1,63 @@
+// SongCard.module.scss
+.songCard {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 1rem;
+  background-color: rgba(255, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.activeSong {
+  background-color: rgba(76, 66, 110, 0.8);
+}
+
+.songIndex {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  margin-right: 1rem;
+}
+
+.songInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.songImage {
+  width: 100%;
+  height: 100%;
+}
+
+.songDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.songName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songSubtitle {
+  font-size: 1rem;
+  color: #b3b3b3;
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

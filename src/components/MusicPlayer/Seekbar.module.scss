@@ -1,0 +1,44 @@
+.seekbar {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  color: #b3b3b3;
+  background-color: #282828;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
+}
+
+.button {
+  display: none;
+  margin-right: 4px;
+  color: #fff;
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.text {
+  color: #fff;
+}
+
+.input {
+  display: none;
+  width: 24px;
+  height: 1px;
+  margin: 0 4px;
+  border-radius: 4px;
+
+  @media (min-width: 768px) {
+    display: block;
+    width: 56px;
+  }
+
+  @media (min-width: 1536px) {
+    margin: 0 6px;
+    width: 96px;
+  }
+}

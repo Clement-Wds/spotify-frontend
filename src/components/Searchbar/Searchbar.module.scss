@@ -1,0 +1,32 @@
+// Searchbar.module.scss
+.searchbar {
+  padding: 0.5rem;
+  color: #b3b3b3;
+
+  &:focus-within {
+    color: #999999;
+  }
+}
+
+.searchField {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.searchIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 1rem;
+}
+
+.searchInput {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #b3b3b3;
+  font-size: 1rem;
+  padding: 1rem;
+}

@@ -1,0 +1,14 @@
+// Error.module.scss
+.errorContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMessage {
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  margin-top: 0.5rem;
+}

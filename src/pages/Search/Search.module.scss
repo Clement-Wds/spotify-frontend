@@ -1,0 +1,51 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.sm\:justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
