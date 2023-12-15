@@ -1,0 +1,19 @@
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #b3b3b3;
+  background-color: #282828;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.hiddenIcon {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+}
