@@ -12,8 +12,8 @@ const SongBar = ({
   activeSong,
   handlePauseClick,
   handlePlayClick,
+  data,
 }) => {
-  console.log(song);
   return (
     <div
       className={`w-full flex flex-row items-center hover:bg-[#4c426e] ${

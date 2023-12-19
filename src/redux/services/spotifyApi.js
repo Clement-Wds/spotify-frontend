@@ -5,7 +5,7 @@ export const spotifyApi = createApi({
   reducerPath: 'spotifyApi',
   baseQuery: fetchBaseQuery({
     // Remplacer par l'URL de base de votre API Express.js
-    baseUrl: 'http://localhost:3000/api',
+    baseUrl: 'http://localhost:3001/api',
     prepareHeaders: headers => {
       // Ajouter ici toute logique d'en-tête supplémentaire si nécessaire
       return headers;

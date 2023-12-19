@@ -1,0 +1,42 @@
+// MusicCard.module.scss
+.musicCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #ccc; // fond gris
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-10px);
+    }
+  
+    .trackInfo {
+      display: flex;
+      align-items: center;
+    }
+  
+    .trackNumber {
+      margin-right: 1rem;
+    }
+  
+    .titleAndArtist {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .musicTitle {
+      font-weight: bold;
+    }
+  
+    .musicArtist {
+      font-size: 0.8rem;
+    }
+  
+    .duration {
+      margin-left: auto;
+    }
+  }
+  
