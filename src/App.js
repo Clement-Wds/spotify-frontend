@@ -4,11 +4,20 @@ import {Route, Routes} from 'react-router-dom';
 import './App.scss';
 
 import {Searchbar, Sidebar, MusicPlayer} from './components';
-import {ArtistDetails, Discover, Search, SongDetails} from './pages';
+import {
+  ArtistDetails,
+  Discover,
+  Search,
+  SongDetails,
+  Artists,
+  AlbumsByArtist,
+  MusicsByAlbum,
+} from './pages';
 
 const App = () => {
   const {activeSong} = useSelector(state => state.player);
-
+  //console.log(activeSong);
+  console.log(useSelector(state => state.player));
   return (
     <div className="relative flex">
       <Sidebar />
@@ -22,6 +31,9 @@ const App = () => {
               <Route path="/artists/:id" element={<ArtistDetails />} />
               <Route path="/songs/:songid" element={<SongDetails />} />
               <Route path="/search/:searchTerm" element={<Search />} />
+              <Route path="/artists" element={<Artists />} />
+              <Route path="/artist/:id/albums" element={<AlbumsByArtist />} />
+              <Route path="/album/:id/musics" element={<MusicsByAlbum />} />
             </Routes>
           </div>
           <div className="xl:sticky relative top-0 h-fit"></div>

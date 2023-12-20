@@ -4,7 +4,11 @@ import {Link} from 'react-router-dom';
 import styles from './DetailsHeader.module.scss';
 
 const DetailsHeader = ({artistId, artistData, songData}) => {
-  const artist = artistData?.data[0]?.attributes;
+  if (!artistData || !artistData.data || artistData.data.length === 0) {
+    // Gérer le cas où artistData, artistData.data ou artistData.data[0] sont undefined
+    return <div>Loading...</div>;
+  }
+  const artist = artistData.data[0].attributes;
 
   return (
     <div className={styles.detailsHeader}>

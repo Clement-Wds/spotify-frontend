@@ -8,6 +8,11 @@ import RelatedSongs from './RelatedSongs/index';
 import MusicPlayer from './MusicPlayer/index';
 import Loader from './Loader/index';
 import Error from './Error/index';
+import Artist from './Artist/index';
+import Album from './Album/index';
+import AlbumCard from './AlbumCard/index';
+import Music from './Music/index';
+import MusicCard from './MusicCard/index';
 
 export {
   Sidebar,
@@ -20,4 +25,9 @@ export {
   MusicPlayer,
   Loader,
   Error,
+  Artist,
+  Album,
+  AlbumCard,
+  Music,
+  MusicCard,
 };
