@@ -3,9 +3,9 @@ import React from 'react';
 
 import {MusicCard} from '../../components';
 
-const Music = ({music, data}) => {
+const Music = ({song, data, i}) => {
   //const {data: musicsData} = useGetMusicsByAlbumQuery(album.id);
-  return <MusicCard key={music.id} music={music} data={data} />;
+  return <MusicCard key={song.id} song={song} data={data} i={i} />;
 };
 
 export default Music;

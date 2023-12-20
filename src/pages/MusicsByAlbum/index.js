@@ -17,8 +17,8 @@ const AllMusicsByAlbum = () => {
   if (error) return <Error />;
   return (
     <div className="flex flex-col gap-4">
-      {musicsData.map(music => (
-        <Music key={music.id} music={music} data={musicsData} />
+      {musicsData.map((song, i) => (
+        <Music key={song.id} song={song} data={musicsData} i={i} />
       ))}
     </div>
   );
