@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {NavLink, useLocation} from 'react-router-dom';
 import {RiCloseLine} from 'react-icons/ri';
 import {HiOutlineMenu} from 'react-icons/hi';
 
@@ -7,21 +7,33 @@ import {logo} from '../../assets/index.js';
 import {links} from '../../assets/constants';
 
 // Reuse in both mobile and desktop
-const NavLinks = ({handleClick}) => (
-  <div className="mt-10">
-    {links.map(item => (
-      // Call handleClick only on mobile device
-      <NavLink
-        key={item.name}
-        to={item.to}
-        className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400"
-        onClick={() => handleClick && handleClick()}>
-        <item.icon className="w-6 h-6 mr-2" />
-        {item.name}
-      </NavLink>
-    ))}
-  </div>
-);
+const NavLinks = ({handleClick}) => {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
+  return (
+    <div className="mt-10">
+      {links.map(item => (
+        <NavLink
+          key={item.name}
+          to={item.to}
+          className={`flex flex-row justify-start items-center my-8 text-sm font-medium ${
+            activeLink === item.to
+              ? 'text-green-600'
+              : 'text-gray-400 hover:text-green-600'
+          }`}
+          onClick={() => handleClick && handleClick()}>
+          <item.icon className="w-6 h-6 mr-2" />
+          {item.name}
+        </NavLink>
+      ))}
+    </div>
+  );
+};
 
 const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +41,7 @@ const Sidebar = () => {
     <>
       <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
-        <NavLinks />
+        <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
 
       {/* Mobile Menubar */}

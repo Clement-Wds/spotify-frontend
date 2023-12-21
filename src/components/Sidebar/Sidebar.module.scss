@@ -27,8 +27,9 @@
   font-weight: 500;
   color: #b3b3b3;
 
-  &:hover {
-    color: #1db954;
+  &:hover,
+  &:active {
+    color: #1db954; // Vert Spotify
   }
 }
 

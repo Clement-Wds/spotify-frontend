@@ -12,9 +12,6 @@ const Discover = () => {
   const {activeSong, isPlaying, genreListId} = useSelector(
     state => state.player,
   );
-  // const {data, isFetching, error} = useGetSongsByGenreQuery(
-  //   genreListId || 'POP',
-  // );
   const {data, isFetching, error} = useGetAllArtistsQuery();
 
   if (isFetching) return <Loader title="Loading Songs..." />;

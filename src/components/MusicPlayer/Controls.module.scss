@@ -4,6 +4,8 @@
   align-items: center;
   color: #b3b3b3;
   background-color: #282828;
+  width: 80%; // Ajoutez cette ligne pour définir la largeur à 80% de la largeur de l'écran
+  margin: 0 auto; // Ajoutez cette ligne pour centrer le lecteur sur l'écran
 }
 
 .cursorPointer {
