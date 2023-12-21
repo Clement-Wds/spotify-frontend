@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {nextSong, prevSong, playPause} from '../../redux/features/playerSlice';
 import Controls from './Controls';
@@ -20,11 +20,7 @@ const MusicPlayer = () => {
   const [shuffle, setShuffle] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (currentSongs.length) dispatch(playPause(true));
-  }, [currentIndex]);
-
-  const handlePlayPause = () => {
+  const handlePlayPause = useCallback(() => {
     if (!isActive) return;
 
     if (isPlaying) {
@@ -32,9 +28,9 @@ const MusicPlayer = () => {
     } else {
       dispatch(playPause(true));
     }
-  };
+  }, [isActive, isPlaying, dispatch]);
 
-  const handleNextSong = () => {
+  const handleNextSong = useCallback(() => {
     dispatch(playPause(false));
 
     if (!shuffle) {
@@ -42,9 +38,9 @@ const MusicPlayer = () => {
     } else {
       dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
     }
-  };
+  }, [shuffle, currentIndex, currentSongs.length, dispatch]);
 
-  const handlePrevSong = () => {
+  const handlePrevSong = useCallback(() => {
     if (currentIndex === 0) {
       dispatch(prevSong(currentSongs.length - 1));
     } else if (shuffle) {
@@ -52,7 +48,9 @@ const MusicPlayer = () => {
     } else {
       dispatch(prevSong(currentIndex - 1));
     }
-  };
+  }, [shuffle, currentIndex, currentSongs.length, dispatch]);
+
+  const memoizedValue = useMemo(() => handleNextSong, [handleNextSong]);
 
   return (
     <div className={styles.musicPlayer}>
@@ -89,7 +87,7 @@ const MusicPlayer = () => {
           seekTime={seekTime}
           repeat={repeat}
           currentIndex={currentIndex}
-          onEnded={handleNextSong}
+          onEnded={memoizedValue}
           onTimeUpdate={event => setAppTime(event.target.currentTime)}
           onLoadedData={event => setDuration(event.target.duration)}
         />
