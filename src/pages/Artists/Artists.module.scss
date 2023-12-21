@@ -1,0 +1,31 @@
+// Pour la page TopArtists
+.top-artists {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 3em;
+    color: white;
+    text-align: left;
+    margin-top: 1em;
+    margin-bottom: 2.5em;
+  }
+
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 0.5em;
+  }
+}
+
+// Pour la page AllArtists
+.all-artists {
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
