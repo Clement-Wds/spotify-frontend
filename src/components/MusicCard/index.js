@@ -29,7 +29,7 @@ const MusicCard = ({song, data}) => {
     }
   };
   //Lien créé pour écouter la musique
-  console.log(songurl);
+  //console.log(songurl);
   return (
     <div className={styles.musicCard} onClick={handlePlayClick}>
       <div className={styles.trackInfo}>

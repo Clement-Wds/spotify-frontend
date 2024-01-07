@@ -30,7 +30,6 @@ const Player = React.memo(
       ref.current.currentTime = seekTime;
     }, [seekTime]);
 
-    console.log('perf');
     // Utiliser l'ID de la chanson active dans l'URL
     const songUrl = `http://localhost:3001/api/music/file/${activeSong.id}`;
 

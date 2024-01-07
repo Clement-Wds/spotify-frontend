@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback, useMemo} from 'react';
+import React, {useState, useEffect, useCallback, useMemo, useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {nextSong, prevSong, playPause} from '../../redux/features/playerSlice';
 import Controls from './Controls';
@@ -6,6 +6,7 @@ import Player from './Player';
 import Seekbar from './Seekbar';
 import Track from './Track';
 import VolumeBar from './VolumeBar';
+import io from 'socket.io-client';
 
 import styles from './MusicPlayer.module.scss';
 
@@ -18,7 +19,49 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
+  // Ajoutez un état pour le lien partagé
+  const [sharedTime, setSharedTime] = useState(0);
   const dispatch = useDispatch();
+  const socketRef = useRef();
+
+  // const handleShareTime = useCallback(() => {
+  //   socket.emit('shareTime', {time: appTime, song: activeSong.id});
+  // }, [appTime, activeSong]);
+
+  useEffect(() => {
+    socketRef.current = io(process.env.REACT_APP_SOCKET_HOST);
+    socketRef.current.emit('register', 'clement');
+
+    socketRef.current.on('shareTime', musique => {
+      console.log(musique.activeSong);
+      console.log(musique.time);
+
+      if (!isPlaying) {
+        dispatch(playPause(true));
+        dispatch(nextSong(musique.currentIndex));
+        setSeekTime(musique.time);
+      }
+    });
+
+    return () => {
+      socketRef.current.off('shareTime');
+      socketRef.current.close();
+    };
+  }, [isPlaying, dispatch]);
+
+  const handleShareTime = e => {
+    e.preventDefault();
+
+    socketRef.current.emit('shareTime', {
+      time: appTime,
+      song: activeSong.id,
+      activeSong: activeSong,
+      currentSongs: currentSongs,
+      currentIndex: currentIndex,
+      isActive: isActive,
+      isPlaying: isPlaying,
+    });
+  };
 
   const handlePlayPause = useCallback(() => {
     if (!isActive) return;
@@ -91,6 +134,9 @@ const MusicPlayer = () => {
           onTimeUpdate={event => setAppTime(event.target.currentTime)}
           onLoadedData={event => setDuration(event.target.duration)}
         />
+      </div>
+      <div>
+        <button onClick={handleShareTime}>Partager</button>
       </div>
       <VolumeBar
         value={volume}
