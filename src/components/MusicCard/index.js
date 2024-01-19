@@ -10,7 +10,7 @@ const MusicCard = ({song, data}) => {
   const [songurl, setSong] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/music/file/${song.id}`)
+    fetch(`http://46.105.30.149:3001/api/music/file/${song.id}`)
       .then(response => response.blob())
       .then(musicBlob => {
         const musicUrl = URL.createObjectURL(musicBlob);
