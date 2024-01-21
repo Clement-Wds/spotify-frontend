@@ -14,6 +14,8 @@ import AlbumCard from './AlbumCard/index';
 import Music from './Music/index';
 import MusicCard from './MusicCard/index';
 import MusicCardDiscover from './MusicCardDiscover/index';
+import PlaylistModal from './PlaylistModal/index';
+import DeleteConfirmationModal from './DeleteConfirmationModal/index';
 
 export {
   Sidebar,
@@ -32,4 +34,6 @@ export {
   Music,
   MusicCard,
   MusicCardDiscover,
+  PlaylistModal,
+  DeleteConfirmationModal,
 };
