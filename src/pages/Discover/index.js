@@ -1,18 +1,15 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {Error, Loader, SongCard} from '../../components';
+import {Error, Loader, MusicCardDiscover} from '../../components'; // Importez MusicCardDiscover
 import {genres} from '../../assets/constants';
 import {selectGenreListId} from '../../redux/features/playerSlice';
-import {
-  useGetSongsByGenreQuery,
-  useGetAllArtistsQuery,
-} from '../../redux/services/spotifyApi'; // Importer le hook de votre API
+import {useGetAllMusicQuery} from '../../redux/services/spotifyApi'; // Importez useGetAllMusicQuery
 
 const Discover = () => {
   const dispatch = useDispatch();
   const {activeSong, isPlaying, genreListId} = useSelector(
     state => state.player,
   );
-  const {data, isFetching, error} = useGetAllArtistsQuery();
+  const {data: allMusicData, isFetching, error} = useGetAllMusicQuery(); // Utilisez useGetAllMusicQuery pour récupérer toutes les musiques
 
   if (isFetching) return <Loader title="Loading Songs..." />;
   if (error) return <Error />;
@@ -38,11 +35,11 @@ const Discover = () => {
         </select>
       </div>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {data?.map((song, i) => (
-          <SongCard
+        {allMusicData?.map((song, i) => (
+          <MusicCardDiscover
             key={song.id}
             song={song}
-            data={data}
+            data={allMusicData}
             activeSong={activeSong}
             isPlaying={isPlaying}
             i={i}

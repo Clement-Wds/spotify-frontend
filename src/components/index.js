@@ -13,6 +13,7 @@ import Album from './Album/index';
 import AlbumCard from './AlbumCard/index';
 import Music from './Music/index';
 import MusicCard from './MusicCard/index';
+import MusicCardDiscover from './MusicCardDiscover/index';
 
 export {
   Sidebar,
@@ -30,4 +31,5 @@ export {
   AlbumCard,
   Music,
   MusicCard,
+  MusicCardDiscover,
 };
