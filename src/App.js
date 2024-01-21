@@ -12,6 +12,7 @@ import {
   Artists,
   AlbumsByArtist,
   MusicsByAlbum,
+  Playlists,
 } from './pages';
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/artists" element={<Artists />} />
               <Route path="/artist/:id/albums" element={<AlbumsByArtist />} />
               <Route path="/album/:id/musics" element={<MusicsByAlbum />} />
+              <Route path="/playlists" element={<Playlists />} />
             </Routes>
           </div>
           <div className="xl:sticky relative top-0 h-fit"></div>

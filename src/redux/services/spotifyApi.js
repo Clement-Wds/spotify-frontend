@@ -44,6 +44,37 @@ export const spotifyApi = createApi({
       query: musicId => `/music/${musicId}/album`,
     }),
 
+    // Routes pour les playlists
+    createPlaylist: builder.mutation({
+      query: playlist => ({url: '/playlist', method: 'POST', body: playlist}),
+    }),
+    getAllPlaylists: builder.query({query: () => '/playlists'}),
+    getPlaylist: builder.query({query: id => `/playlist/${id}`}),
+    updatePlaylist: builder.mutation({
+      query: (id, playlist) => ({
+        url: `/playlist/${id}`,
+        method: 'PUT',
+        body: playlist,
+      }),
+    }),
+    deletePlaylist: builder.mutation({
+      query: id => ({url: `/playlist/${id}`, method: 'DELETE'}),
+    }),
+    addMusicToPlaylist: builder.mutation({
+      query: (id, music) => ({
+        url: `/playlist/${id}/music`,
+        method: 'POST',
+        body: music,
+      }),
+    }),
+    removeMusicFromPlaylist: builder.mutation({
+      query: (id, music) => ({
+        url: `/playlist/${id}/music`,
+        method: 'DELETE',
+        body: music,
+      }),
+    }),
+
     // Recherche
     search: builder.query({query: term => `/search?term=${term}`}),
 
@@ -71,6 +102,13 @@ export const {
   useGetAlbumsByArtistQuery,
   useGetAlbumByMusicQuery,
   useSearchQuery,
+  useCreatePlaylistMutation,
+  useGetAllPlaylistsQuery,
+  useGetPlaylistQuery,
+  useUpdatePlaylistMutation,
+  useDeletePlaylistMutation,
+  useAddMusicToPlaylistMutation,
+  useRemoveMusicFromPlaylistMutation,
   //PATCH DEBUG
   useGetSongsByGenreQuery,
   useGetSongDetailsQuery,
