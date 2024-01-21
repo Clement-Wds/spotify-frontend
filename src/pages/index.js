@@ -6,6 +6,7 @@ import Artists from './Artists/index';
 import AlbumsByArtist from './AlbumsByArtist/index';
 import MusicsByAlbum from './MusicsByAlbum/index';
 import Playlists from './Playlists/index';
+import PlaylistDetails from './PlaylistDetails/index';
 
 export {
   Discover,
@@ -16,4 +17,5 @@ export {
   AlbumsByArtist,
   MusicsByAlbum,
   Playlists,
+  PlaylistDetails,
 };
