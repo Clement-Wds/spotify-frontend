@@ -74,6 +74,9 @@ export const spotifyApi = createApi({
         body: music,
       }),
     }),
+    getAllMusicsFromPlaylist: builder.query({
+      query: id => `/playlist/${id}/musics`,
+    }),
 
     // Recherche
     search: builder.query({query: term => `/search?term=${term}`}),
@@ -109,6 +112,8 @@ export const {
   useDeletePlaylistMutation,
   useAddMusicToPlaylistMutation,
   useRemoveMusicFromPlaylistMutation,
+  useGetAllMusicsFromPlaylistQuery,
+
   //PATCH DEBUG
   useGetSongsByGenreQuery,
   useGetSongDetailsQuery,
