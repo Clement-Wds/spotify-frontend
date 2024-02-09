@@ -10,7 +10,7 @@ const Album = ({album}) => {
 
   //A Patch
   useEffect(() => {
-    fetch(`https://46.105.30.149:3001/api/album/image/${album.id}`)
+    fetch(`https://ceweb-group.fr/api/album/image/${album.id}`)
       .then(response => response.blob())
       .then(imageBlob => {
         const imageUrl = URL.createObjectURL(imageBlob);

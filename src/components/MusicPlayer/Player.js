@@ -31,7 +31,7 @@ const Player = React.memo(
     }, [seekTime]);
 
     // Utiliser l'ID de la chanson active dans l'URL
-    const songUrl = `https://46.105.30.149:3001/api/music/file/${activeSong.id}`;
+    const songUrl = `https://ceweb-group.fr/api/music/file/${activeSong.id}`;
 
     return (
       <audio

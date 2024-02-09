@@ -18,7 +18,7 @@ const MusicCardDiscover = ({song, data, activeSong, isPlaying, i}) => {
 
   useEffect(() => {
     if (albumId) {
-      fetch(`https://46.105.30.149:3001/api/album/image/${albumId}`)
+      fetch(`https://ceweb-group.fr/api/album/image/${albumId}`)
         .then(response => response.blob())
         .then(imageBlob => {
           const imageUrl = URL.createObjectURL(imageBlob);
